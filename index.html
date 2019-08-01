@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>Hello, world!</title>
+    <title>Ramon Costa - Resume</title>
   </head>
 	  <body class="bg-light"> 
 		<h1 class="display-4 text-center bg-light" data-personal-name>Josh Neandertal</h3>	
@@ -164,7 +164,7 @@
     	var personalData = {
     		name: 'Ramon Costa',
     		subtitle: 'IT Student',
-    		birthdate: '1983-02-16',
+    		birthdate: '1993-02-16',
     		email: 'rmncst16@gmail.com',
     		resume: '',
     		objectives: '',
@@ -191,20 +191,26 @@
     			{ name: 'JAVA' , level: 'Basic' , class: 'danger' } ,
     			{ name: 'PHP' , level: 'Advanced' , class: 'success' } ,
     			{ name: 'JavaScript' , level: 'Advanced' , class: 'success' } ,
+    			{ name: 'CPP' , level: 'Basic' , class: 'danger' } ,
     		] ,
     		mobile: [
-				{ name: 'Android' , level: 'Basic' , class: 'danger' } ,
-    			{ name: 'React Native' , level: 'Intermediary' , class: 'info' } ,
+			{ name: 'Android' , level: 'Basic' , class: 'danger' } ,
+    			{ name: 'React Native' , level: 'Advanced' , class: 'info' } ,
     		],
     		db: [
-				{ name: 'Sql Server' , level: 'Advanced' , class: 'success' } ,
+			{ name: 'Sql Server' , level: 'Advanced' , class: 'success' } ,
     			{ name: 'Mysql / MariaDB' , level: 'Intermediary' , class: 'info' } ,
     			{ name: 'Oracle' , level: 'Basic' , class: 'danger' } ,	
     		],    		
     		other: [
+    			{ name: 'GIT', level: 'Intermediary', class: 'info' },
+    			{ name: 'Team Leader', level: 'Intermediary', class: 'info' },
     			{ name: 'Apache Web Server', level: 'Intermediary', class: 'info' },
     			{ name: 'Linux Server (Debian Based)', level: 'Intermediary', class: 'info' },
     			{ name: 'Mysql Server', level: 'Intermediary', class: 'info' },
+			{ name: 'Symfony Framwork (PHP)', level: 'Intermediary', class: 'info' },
+			{ name: 'Laravel Framwork (PHP)', level: 'Intermediary', class: 'info' },			
+			{ name: 'Redux (React)', level: 'Intermediary', class: 'info' },
     		]
     	};
 
@@ -216,7 +222,8 @@
     			description: '<ul> ' +
     				'<li>System Analyst and Requeriments of real communication systems</li>' +
     				'<li>ASP.NET MVC and C# Developer</li>' +
-					'<li>Sql Server Basic Administrator</li>' +
+				'<li>Windows Services Developer</li>' +
+				'<li>Sql Server Basic Administrator</li>' +
     			'</ul>'
     		},
     		{
@@ -271,32 +278,26 @@
     	];
 
     	$(function(){
-
     		Object.keys(personalData).forEach(function(prop){
     			$('[data-personal-' + prop + ']').html(personalData[prop]);
     		});
-
     		Object.keys(skills).forEach(function(skill) {
     			skills[skill].forEach(function(item) {
     				$('[data-skills-'+ skill +']').append(getTrSkill(item.name,item.class,item.level))    				
     			})
     		});
-
-			function getTrSkill(name, className, level) {
-				return "<tr><td>" + name + "</td><td><span class='badge badge-pill badge-" + className + "' >" + level + "</span></td></tr>";				
-			}
-
-			professionalResume.forEach(function(item) {
-				$('[data-professional-resumes').append(getRowResumeProfessional(item.function, item.company, item.period, item.description));
-			});
-
-			function getRowResumeProfessional(func, company, period, description) {
-				return '<div class="col-md-6 shadow-sm rounded" style="padding: 15px;"><div class="row"><div class="col-md-4 align-middle"><h3 class="text-block  align-middle">'+ func +'</h3><h5 class="text-muted"">'+ company +'</h4><h4><small>' + period + '</small></h4></div><div class="col-md-8"> ' + description + '</div></div></div>';
-			}
+		function getTrSkill(name, className, level) {
+			return "<tr><td>" + name + "</td><td><span class='badge badge-pill badge-" + className + "' >" + level + "</span></td></tr>";				
+		}
+		professionalResume.forEach(function(item) {
+			$('[data-professional-resumes').append(getRowResumeProfessional(item.function, item.company, item.period, item.description));
+		});
+		function getRowResumeProfessional(func, company, period, description) {
+			return '<div class="col-md-6 shadow-sm rounded" style="padding: 15px;"><div class="row"><div class="col-md-4 align-middle"><h3 class="text-block  align-middle">'+ func +'</h3><h5 class="text-muted"">'+ company +'</h4><h4><small>' + period + '</small></h4></div><div class="col-md-8"> ' + description + '</div></div></div>';
+		}
     	})
 
     </script>
   </body>
-    	}
 </html>
 
